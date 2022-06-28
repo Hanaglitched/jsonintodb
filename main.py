@@ -45,7 +45,7 @@ cursor.execute(sql_)
 print("uuid insertion done")
 
 
-# push datas into database, by numbers
+# (3) push datas into database, by numbers
 for i in range(0, len(df.index)):
     # check the progress; you could make it progress bar to get it visualize.
     print(i)
@@ -75,7 +75,7 @@ for i in range(0, len(df.index)):
         # replace NaN with None;
         # http://daplus.net/python-pandas-%EB%98%90%EB%8A%94-numpy-nan%EC%9D%84-none%EC%9C%BC%EB%A1%9C-%EB%8C%80%EC%B2%B4%ED%95%98%EC%97%AC-mysqldb%EC%99%80-%ED%95%A8%EA%BB%98-%EC%82%AC%EC%9A%A9/
         price_moda = price_moda.replace({np.nan: None})
-        # 2. price insertion
+        # price insertion
         for j in range(0, len(price_moda.index)):
             # introducing variables
             foil = str(price_moda.iloc[j]['foil'])
@@ -93,7 +93,7 @@ connection.commit()
 # -----------------------------------------------
 
 # -----------------------------------------------
-# (4) get elapsed time (for test)
+# (3) get elapsed time (for test)
 end_time = datetime.now()
 elapsed_time = end_time - start_time
 print(elapsed_time)
