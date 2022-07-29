@@ -53,6 +53,7 @@ print("uuid insertion done")
 
 uuid = uuid.replace({np.nan: None})
 
+
 # push datas into database, by numbers
 print("b")
 for i in range(0, len(uuid.index)):
@@ -97,13 +98,14 @@ for i in range(0, len(uuid.index)):
                         val += ","
     if val != "":
         sql = "INSERT INTO MagicnotifyPrice (`foil`, `normal`, `date`, `key`) VALUES " + val + ";"
+
         cursor.execute(sql)
 
 connection.commit()
 # -----------------------------------------------
 
 # -----------------------------------------------
-# (4) get elapsed time (for test)
+# (3) get elapsed time (for test)
 end_time = datetime.now()
 elapsed_time = end_time - start_time
 print(elapsed_time)
